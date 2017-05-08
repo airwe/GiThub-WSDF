@@ -1,0 +1,63 @@
+.widget_atfi_search_widget img, .widget_atfi_widget img {
+	border-radius: 5px;
+	-moz-border-radius: 5px;
+	-webkit-border-radius: 5px;
+	margin: 0 5px 0 0;
+}
+.widget_atfi_search_widget span, .widget_atfi_widget span {
+	display: block;
+	font-size: 10px;
+}
+.widget_atfi_search_widget p, .widget_atfi_widget p {
+	margin: 5px 0;
+}
+.widget_atfi_search_widget li, .widget_atfi_widget li {
+	line-height: 17px;
+	font-size: 13px;
+}
+.atfi-short-search .atfi_timestamp, .afti-short-timeline .atfi_timestamp {
+	font-size: 11px;
+}
+.atfi_timestamp {
+	display: block;
+	clear: both;
+}
+a.atfi_link {
+	font-size: 10px;
+	display: block;
+	float: left;
+	width:30%;
+}
+
+a.atfi_link span {
+	background: url('images/everything-spritev2.png') no-repeat 0 0;
+	width: 16px;
+	height: 16px;
+	margin: 0 5px 0 0;
+	display: block;
+	float: left;
+}
+
+a.atfi_link.reply span {
+	background-position: 0 0;
+}
+
+a.atfi_link.reply:hover span {
+	background-position: -16px 0;
+}
+
+a.atfi_link.favorite span {
+	background-position: -32px 0;
+}
+
+a.atfi_link.favorite:hover span {
+	background-position: -48px 0;
+}
+
+a.atfi_link.retweet span {
+	background-position: -80px 0;
+}
+
+a.atfi_link.retweet:hover span {
+	background-position: -96px 0;
+}
