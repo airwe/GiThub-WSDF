@@ -1,0 +1,311 @@
+/* 
+  
+  .oooo.        ooooooooo    oooooooooo.   oooooooooooo  .oooooo..o ooooo   .oooooo.    ooooo      ooo  .oooooo..o 
+.dP""Y88b      d"""""""8'    `888'   `Y8b  `888'     `8 d8P'    `Y8 `888'  d8P'  `Y8b   `888b.     `8' d8P'    `Y8 
+      ]8P'           .8'      888      888  888         Y88bo.       888  888            8 `88b.    8  Y88bo.      
+    <88b.           .8'       888      888  888oooo8     `"Y8888o.   888  888            8   `88b.  8   `"Y8888o.  
+     `88b.         .8'        888      888  888    "         `"Y88b  888  888     ooooo  8     `88b.8       `"Y88b 
+o.   .88P  .o.    .8'         888     d88'  888       o oo     .d8P  888  `88.    .88'   8       `888  oo     .d8P 
+`8bd88P'   Y8P   .8'         o888bood8P'   o888ooooood8 8""88888P'  o888o  `Y8bood8P'   o8o        `8  8""88888P'  
+
+  
+ Like the code you see? - www.3point7designs.com
+
+  =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
+  || TABLE OF CONTENTS 									        ||
+  =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
+ 
+  +01 : RESET
+  +02 : TYPOGRAPHY
+  +03 : FORMS
+  +04 : ERROR AND SUCCESS DIALOGS
+  +05 : HELPER CLASSES
+  +06 : CSS3 CLASSES
+
+*/
+
+/* ================== */
+/* = +01: CSS Reset = */
+/* ================== */
+
+html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,acronym,address,big,cite,code,del,dfn,em,font,img,ins,kbd,q,s,samp,small,strike,strong,sub,sup,tt,var,b,u,i,center,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td{margin:0;padding:0;border:0;outline:0;font-size:100%;vertical-align:baseline;background:transparent}body{line-height:1}ol,ul{list-style:none}blockquote,q{quotes:none}blockquote:before,blockquote:after,q:before,q:after{content:'';content:none}:focus{outline:0}ins{text-decoration:none}del{text-decoration:line-through}table{border-collapse:collapse;border-spacing:0}
+
+/* =================== */
+/* = +02: Typography = */
+/* =================== */
+
+body{font:13px/1.5 Helvetica,Arial,'Liberation Sans',FreeSans,sans-serif}a:focus{outline:1px dotted invert}hr{border-color:#ccc;border-style:solid;border-width:1px 0 0;clear:both;height:0}h1{font-size:25px}h2{font-size:23px}h3{font-size:21px}h4{font-size:19px}h5{font-size:17px}h6{font-size:15px}ol{list-style:decimal}ul{list-style:square}li{margin-left:30px}p,dl,hr,ol,ul,pre,table,address,fieldset{margin-bottom:18px; margin-top: 0px;} h1,h2,h3,h4,h5,h6 { margin-bottom: 8px; }
+
+header, footer, article, section, aside, nav, details, hgroup  { display: block; }
+
+
+/* Misc classes
+-------------------------------------------------------------- */
+
+.small      { font-size: .8em; margin-bottom: 1.875em; line-height: 1.875em; }
+.large      { font-size: 1.2em; line-height: 2.5em; margin-bottom: 1.25em; }
+.hide       { display: none; }
+
+.quiet      { color: #666; }
+.loud       { color: #000; }
+.highlight  { background:#ff0; }
+.added      { background:#060; color: #fff; }
+.removed    { background:#900; color: #fff; }
+
+.first      { margin-left:0; padding-left:0; }
+.last       { margin-right:0; padding-right:0; }
+.top        { margin-top:0; padding-top:0; }
+.bottom     { margin-bottom:0; padding-bottom:0; }
+
+.nonlist { list-style: none; margin: 0; padding: 0; }
+.nonlist li { padding: 0; margin: 0; }
+
+
+/* ============== */
+/* = +03: Forms = */
+/* ============== */
+
+/* -------------------------------------------------------------- 
+   
+   forms.css
+   * Sets up some default styling for forms
+   * Gives you classes to enhance your forms
+   
+   Usage:
+   * For text fields, use class .title or .text
+   
+-------------------------------------------------------------- */
+
+label       { font-weight: bold; }
+fieldset    { padding:1.4em; margin: 0 0 1.5em 0; border: 1px solid #ccc; }
+legend      { font-weight: bold; font-size:1.2em; }
+
+
+/* Form fields
+-------------------------------------------------------------- */
+
+input.text, input.title,
+textarea, select {
+  margin:0.5em 0;
+  border:1px solid #bbb;
+}
+
+input.text:focus, input.title:focus,
+textarea:focus, select:focus {
+  border:1px solid #666;
+}
+
+input.text, 
+input.title   { width: 300px; padding:5px; }
+input.title   { font-size:1.5em; }
+textarea      { width: 390px; height: 250px; padding:5px; }
+
+form ol, form ul { list-style: none; margin: 1em 0 0 0; padding: 0; }
+form ol li, form ul li { clear: both; height: 1.5em; }
+form ol label, form ul label { float: left; }
+form ol input, form ol textarea, form ol select, form ul input, form ul textarea, form ul select { float: right; }
+
+/* ============================ */
+/* = +04: Feedback and Dialogs = */
+/* ============================ */
+
+/* Success, notice and error boxes
+-------------------------------------------------------------- */
+
+.error,
+.notice, 
+.success    { padding: .8em; margin-bottom: 1em; border: 2px solid #ddd; }
+
+.error      { background: #FBE3E4; color: #8a1f11; border-color: #FBC2C4; }
+.notice     { background: #FFF6BF; color: #514721; border-color: #FFD324; }
+.success    { background: #E6EFC2; color: #264409; border-color: #C6D880; }
+.error a    { color: #8a1f11; }
+.notice a   { color: #514721; }
+.success a  { color: #264409; }
+
+/* ====================== */
+/* = +05: Helper Classes = */
+/* ====================== */
+
+.tac, .center { text-align: center; }
+.tal { text-align: left; }
+.tar { text-align: right; }
+
+.fl, .left { float: left; }
+.fr, .right { float: right; }
+
+img.alignleft, img.left { float: left; margin: 0 20px 20px 0; padding: 5px; border: 1px solid #999; } /* Floated images with borders */
+img.alignright, img.right { float: right; margin: 0 0 20px 20px; padding: 5px; border: 1px solid #999; } /* Floated images with borders */
+
+img.center { text-align: center; margin: 0 auto;}
+
+.imgfl { float: left; margin-right: 18px; }
+.imgfr { float: right; margin-left: 18px; }
+
+.clear { clear: both; }
+.clearfix:after {
+    content: ".";
+    display: block;
+    height: 0;
+    clear: both;
+    visibility: hidden;
+}
+
+.nolist, .nolist li { margin: 0; padding: 0; list-style: none;}
+
+/* ================================= */
+/* = +06: CSS3 Classes and Styling = */
+/* ================================= */
+
+/* 
+
+	Multi Column Layouts
+	
+	use for borders between columns -> column-rule: 1px solid #00000;  
+	
+*/
+
+	.two-column { 
+		-webkit-column-count : 2;  
+		-webkit-column-gap : 20px;  
+		-moz-column-count : 2;  
+		-moz-column-gap : 20px;
+	}	
+
+	.three-column { 
+		-webkit-column-count : 3;  
+		-webkit-column-gap : 20px;  
+		-moz-column-count : 3;  
+		-moz-column-gap : 20px;
+	}
+
+	.four-column { 
+		-webkit-column-count : 4;  
+		-webkit-column-gap : 20px;  
+		-moz-column-count : 4;  
+		-moz-column-gap : 20px;
+	}
+	
+	.six-column { 
+		-webkit-column-count : 6;  
+		-webkit-column-gap : 20px;  
+		-moz-column-count : 6;  
+		-moz-column-gap : 20px;
+	}
+	
+	.eight-column { 
+		-webkit-column-count : 8;  
+		-webkit-column-gap : 20px;  
+		-moz-column-count : 8;  
+		-moz-column-gap : 20px;
+	}
+	
+	/* 
+
+	Text Shadow
+	Usage: text-shadow: rga(r,g,b, opacity) x y Blur;
+	
+	
+	text-shadow: rgba(0,0,0,.8) 0 1px 0;  
+	
+	*/
+	
+	.light-shadow { text-shadow: rgba(0,0,0, .5) 1px 1px 1px;}
+	.heavy-shadow { text-shadow: rgba(0,0,0, .8) 2px 2px 2px;}
+	
+	/*
+	
+	Box Shadow
+	
+	Usage: box-shadow { x y blur color; }
+	
+	*/
+	
+	.box-shadow { 
+		-moz-box-shadow: 2px 2px 5px #000;  
+		-webkit-box-shadow: 2px 2px 5px #000;  
+		box-shadow: 2px 2px 5px #000;	
+	}
+	
+	
+	/* 
+	
+	Border Radius
+	
+	*/
+	
+	.small-rnd { 
+	    -webkit-border-radius: 6px;  
+	    -moz-border-radius: 6px;  
+	    -khtml-border-radius: 6px;  
+	    border-radius: 6px;
+	}
+	
+	.large-rnd { 
+		-webkit-border-radius: 12px;  
+	    -moz-border-radius: 12px;  
+	    -khtml-border-radius: 12px;  
+	    border-radius: 12px;
+	}
+	
+	/* 
+	
+		@font-face 
+		
+		Declair IE .EOT specific @font-face first because it will only use .EOT fonts.
+		You can convert your fonts to .EOT here http://www.microsoft.com/typography/WEFT.mspx
+		
+	===== Example From http://blog.themeforest.net/tutorials/css-font-face-and-15-free-fonts-you-can-use-today/ ====
+	
+	@font-face {
+		font-family: "Droid Serif";
+		src: url(DroidSerif-Regular.eot);
+	}
+
+	@font-face {
+		font-family: "Droid Serif";
+		src: url(DroidSerif-Italic.eot);
+		font-style: italic;
+	}
+
+	@font-face {
+		font-family: "Droid Serif";
+		src: url(DroidSerif-Bold.eot);
+		font-weight: bold;
+	}
+
+	@font-face {
+		font-family: "Droid Serif";
+		src: url(DroidSerif-BoldItalic.eot);
+		font-weight: bold;
+		font-style: italic;
+	}
+	
+	@font-face {
+		font-family: "Droid Serif";
+		src: url(DroidSerif-Regular.ttf) format("truetype");
+	}
+
+	@font-face {
+		font-family: "Droid Serif";
+		src: url(DroidSerif-Italic.ttf) format("truetype");
+		font-style: italic;
+	}
+
+	@font-face {
+		font-family: "Droid Serif";
+		src: url(DroidSerif-Bold.ttf) format("truetype");
+		font-weight: bold;
+	}
+
+	@font-face {
+		font-family: "Droid Serif";
+		src: url(DroidSerif-BoldItalic.ttf) format("truetype");
+		font-weight: bold;
+		font-style: italic;
+	}
+
+	h3 { font-weight: normal; }
+	h3.droid { font-family: "Droid Serif", serif; }
+	
+	*/
